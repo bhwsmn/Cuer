@@ -1,0 +1,16 @@
+﻿@page
+@model IndexModel
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <form method="POST">
+            <input asp-for="@Model.TextData" id="dataInputText" class="fadeIn first" placeholder="Enter Text Here"/>
+            <input type="submit" class="fadeIn second" id="generateButton" value="Generate">
+        </form>
+
+        <div class="fadeIn third" id="formFooter" hidden="@string.IsNullOrWhiteSpace(Model.SvgString)">
+            @Html.Raw(Model.SvgString)
+        </div>
+
+    </div>
+</div>
